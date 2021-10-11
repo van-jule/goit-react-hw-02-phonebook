@@ -3,7 +3,7 @@ import styles from "./ContactsList.module.css";
 import PropTypes from "prop-types";
 
 const ContactsList = ({ contacts, onDeleteContact }) => (
-  <ul className={styles.list}>
+  (contacts.length === 0) ? <div> No contacts </div> : <ul className={styles.list}>
     {contacts.map(({ id, name, number }) => (
       <li key={id} className={styles.item}>
         {name}: {number}
